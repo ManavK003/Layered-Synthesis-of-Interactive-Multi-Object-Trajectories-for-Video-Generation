@@ -405,6 +405,3 @@ FodyWeavers.xsd
 # Ignore the Python virtual environment
 peekaboo_env/
 
-
-
-output/
