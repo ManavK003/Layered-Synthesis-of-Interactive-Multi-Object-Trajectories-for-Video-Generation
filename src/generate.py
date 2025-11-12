@@ -65,7 +65,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     assert args.frozen_steps <= args.num_inference_steps, "Frozen steps should be less than or equal to the number of inference steps"
-    assert args.fg_object in args.prompt, "Foreground object should be present in the prompt"
+    # assert args.fg_object in args.prompt, "Foreground object should be present in the prompt"
     # Example usage
     torch_device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
