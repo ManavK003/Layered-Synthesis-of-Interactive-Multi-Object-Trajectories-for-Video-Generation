@@ -73,18 +73,18 @@ if __name__ == "__main__":
 
     if args.model == "zeroscope":
         pipe = TextToVideoSDPipelineSpatialAware.from_pretrained(
-            "cerspense/zeroscope_v2_576w", torch_dtype=torch.float, variant="fp32").to(torch_device)
+            "cerspense/zeroscope_v2_576w", torch_dtype=torch.float16).to(torch_device)
         num_frames = 24
-        random_latents = torch.randn([1, 4, num_frames, 40, 72], generator=torch.Generator().manual_seed(args.seed)).to(torch_device)
-        bbox_mask = torch.zeros([num_frames, 1, 40, 72], device=torch_device)
+        random_latents = torch.randn([1, 4, num_frames, 40, 72], generator=torch.Generator().manual_seed(args.seed)).to(torch_device).to(torch.float16)
+        bbox_mask = torch.zeros([num_frames, 1, 40, 72], device=torch_device).to(torch.float16)
         height = 320
         width = 576
     elif args.model == "modelscope":
         pipe = TextToVideoSDPipelineSpatialAware.from_pretrained(
-            "damo-vilab/text-to-video-ms-1.7b", torch_dtype=torch.float, variant="fp32").to(torch_device)
+            "damo-vilab/text-to-video-ms-1.7b", variant="fp16").to(torch.float16).to(torch_device)
         num_frames=16
-        random_latents = torch.randn([1, 4, num_frames, 32, 32], generator=torch.Generator().manual_seed(args.seed)).to(torch_device)
-        bbox_mask = torch.zeros([num_frames, 1, 32, 32], device=torch_device)
+        random_latents = torch.randn([1, 4, num_frames, 32, 32], generator=torch.Generator().manual_seed(args.seed)).to(torch_device).to(torch.float16)
+        bbox_mask = torch.zeros([num_frames, 1, 32, 32], device=torch_device).to(torch.float16)
         height = 256
         width = 256
 
