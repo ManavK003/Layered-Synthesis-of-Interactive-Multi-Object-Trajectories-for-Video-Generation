@@ -478,7 +478,6 @@ experiment_results/
 *.jpeg
 *.png
 *.webm
-
 # Pickle and numpy files
 *.pkl
 *.pickle
