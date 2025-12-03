@@ -98,8 +98,7 @@ StyleCopReport.xml
 *.svclog
 *.scc
 # Ignore files with specific extensions
-*.mp4
-*.mp3
+
 
 # Chutzpah Test files
 _Chutzpah*
@@ -404,4 +403,103 @@ FodyWeavers.xsd
 
 # Ignore the Python virtual environment
 peekaboo_env/
+
+
+
+# ========================================
+# PYTHON & ML PROJECT SPECIFIC
+# ========================================
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# Model files and weights (IMPORTANT!)
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+models/
+checkpoints/
+
+# Hugging Face cache (THIS IS BIG!)
+.cache/
+huggingface/
+
+# Data directories
+data/
+dataset/
+datasets/
+*.csv
+*.tsv
+
+# Video and image outputs (IMPORTANT!)
+outputs/
+output/
+results/
+experiment_results/
+*.mp4
+*.avi
+*.mov
+*.gif
+*.jpg
+*.jpeg
+*.png
+*.webm
+# Pickle and numpy files
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# Logs
+*.log
+logs/
+wandb/
+tensorboard/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+.DS_Store
+Thumbs.db
+
+# JSON temporary files
+*.json.tmp
+test_config.json
+
+EOF
 

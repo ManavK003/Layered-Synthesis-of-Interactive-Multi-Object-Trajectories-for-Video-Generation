@@ -1,0 +1,36 @@
+{
+  "model": {
+    "name": "zeroscope",
+    "device": "cuda",
+    "torch_dtype": "float16"
+  },
+  "generation": {
+    "num_frames": 24,
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "frozen_steps": 2,
+    "height": 256,
+    "width": 256
+  },
+  "layered_attention": {
+    "num_layers": 4,
+    "hidden_dim": 512,
+    "num_heads": 8,
+    "enable_cross_layer": true
+  },
+  "trajectory": {
+    "collision_threshold": 0.1,
+    "smoothing_window": 5,
+    "resolve_collisions": true
+  },
+  "motion_priors": {
+    "enabled": true,
+    "cache_path": "./data/animal_motion_cache.pkl",
+    "strength": 0.3
+  },
+  "paths": {
+    "animal_kingdom_data": "./data/animal_kingdom",
+    "output_dir": "./outputs",
+    "results_dir": "./results"
+  }
+}

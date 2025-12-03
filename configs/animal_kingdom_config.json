@@ -1,0 +1,27 @@
+{
+  "dataset": {
+    "path": "./data/animal_kingdom",
+    "splits": {
+      "train": "action_recognition/annotation/train.json",
+      "val": "action_recognition/annotation/val.json",
+      "test": "action_recognition/annotation/test.json"
+    },
+    "video_dir": "action_recognition/dataset/video",
+    "image_dir": "action_recognition/dataset/image"
+  },
+  "species_categories": {
+    "mammals": ["lion", "zebra", "elephant", "giraffe", "cheetah", "leopard", "buffalo", "rhinoceros"],
+    "birds": ["eagle", "parrot", "flamingo", "ostrich", "penguin"],
+    "reptiles": ["crocodile", "lizard", "snake", "turtle"],
+    "amphibians": ["frog", "salamander"],
+    "fish": ["shark", "dolphin", "whale"],
+    "invertebrates": ["octopus", "spider", "butterfly"]
+  },
+  "motion_characteristics": {
+    "fast_moving": ["cheetah", "gazelle", "falcon", "horse"],
+    "slow_moving": ["elephant", "tortoise", "sloth"],
+    "flying": ["eagle", "parrot", "butterfly", "bat"],
+    "swimming": ["dolphin", "shark", "seal", "penguin"],
+    "climbing": ["monkey", "leopard", "squirrel"]
+  }
+}
