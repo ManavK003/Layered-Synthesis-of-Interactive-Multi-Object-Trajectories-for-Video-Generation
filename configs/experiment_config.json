@@ -1,0 +1,43 @@
+{
+  "experiments": {
+    "single_object": {
+      "enabled": true,
+      "num_samples": 10,
+      "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+    },
+    "two_objects": {
+      "enabled": true,
+      "num_samples": 10,
+      "seeds": [100, 101, 102, 103, 104, 105, 106, 107, 108, 109]
+    },
+    "multi_objects": {
+      "enabled": true,
+      "num_samples": 5,
+      "max_objects": 5,
+      "seeds": [200, 201, 202, 203, 204]
+    },
+    "ablation": {
+      "enabled": true,
+      "components": [
+        "full_model",
+        "no_layering",
+        "no_motion_priors",
+        "no_collision_resolution"
+      ]
+    }
+  },
+  "evaluation": {
+    "metrics": [
+      "mIoU",
+      "MOI",
+      "OIS",
+      "TCS",
+      "CAS",
+      "Coverage",
+      "AP50",
+      "CD"
+    ],
+    "save_visualizations": true,
+    "compare_with_baseline": true
+  }
+}
