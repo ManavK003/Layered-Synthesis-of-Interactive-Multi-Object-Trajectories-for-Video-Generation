@@ -6,7 +6,7 @@ Main script for generating videos with multiple objects
 import torch
 import numpy as np
 from diffusers import DiffusionPipeline
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Tuple
 import argparse
 import os
 from pathlib import Path

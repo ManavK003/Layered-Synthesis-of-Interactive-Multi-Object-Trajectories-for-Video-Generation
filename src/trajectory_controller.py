@@ -192,14 +192,18 @@ class TrajectoryAwareController:
             trajectory = start_bbox + alpha * (end_bbox - start_bbox)
             
         elif trajectory_type == 'smooth':
-            # Smooth interpolation using cubic spline
+            # Smooth interpolation using quadratic (cubic needs 4+ points)
             t_in = np.array([0, num_frames - 1])
             t_out = np.linspace(0, num_frames - 1, num_frames)
             bboxes_in = np.stack([start_bbox, end_bbox])
             
             trajectory = []
             for dim in range(4):
-                f = interp1d(t_in, bboxes_in[:, dim], kind='cubic')
+                # Use quadratic for 2 points (or linear as fallback)
+                try:
+                    f = interp1d(t_in, bboxes_in[:, dim], kind='quadratic')
+                except:
+                    f = interp1d(t_in, bboxes_in[:, dim], kind='linear')
                 trajectory.append(f(t_out))
             trajectory = np.stack(trajectory, axis=1)
             
